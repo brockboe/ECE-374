@@ -1,0 +1,62 @@
+\documentclass[11pt, letterpaper]{article}
+\usepackage{fullpage}
+\usepackage{fancyhdr}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage{enumitem}
+
+\newcommand\netid{bvb2}
+\newcommand\name{Brock Boehler}
+\newcommand\class{ECE 374}
+\newcommand\semester{Fall 2019}
+\newcommand\Homework{Homework 3}
+
+\pagestyle{fancyplain}
+\headheight 30pt
+\lhead{\name\\\netid}
+\rhead{\class\\\semester}
+\chead{\Homework}
+\lfoot{}
+\rfoot{}
+\headsep 10pt
+
+\begin{document}
+
+\section*{Problem 1}
+Prove whether the following languages are regular or not.
+
+\begin{enumerate}[label=\Alph*]
+
+\item Strings over the alphabet $\Sigma = \{0,...,9,\#\}$ that contain the substring $c\#^cc$ where $c \in \{0,...,9\} $.
+
+This language \textbf{is} regular - this can be proven by constructing a regular expression that recognizes the language. \textit{(Notation Note: The string $\#^n$ is the string consisting of \# repeated n times. Example: $\#^3 = \#\#\#$)}
+
+$$ \bigcup_{r \in \{0,...,9\}} \Sigma^* (r \#^r r) \Sigma^* $$
+$$= \Sigma^*(00)\Sigma^* + \Sigma^*(1\#1)\Sigma^* + ... + \Sigma^*(9\#^9 9)\Sigma^*$$
+
+%$$ r = \Sigma^* (00) \Sigma^* + 
+%\Sigma^* (1\#1) \Sigma^*  + 
+%\Sigma^* (2 \#^2 2) \Sigma^* + 
+%\Sigma^* (3 \#^3 3) \Sigma^* +
+%\Sigma^* (4 \#^4 4) \Sigma^* + 
+%\Sigma^* (5 \#^5 5) \Sigma^* +
+%\Sigma^* (6 \#^6 6) \Sigma^* +
+%\Sigma^* (7 \$^7 7) \Sigma^* + 
+%\Sigma^* (8 \#^8 8) \Sigma^* +
+%\Sigma^* (9 \#^9 9) \Sigma^* $$
+
+\item Strings over the alphabet $\Sigma = \{0,...,9,\#\}$ of the form $\langle n \rangle \#^n$ where n is a sequence of digits interpreted as a decimal number.
+
+This language \textbf{is not} regular - this can be proven using fooling sets. 
+
+\item Strings over the alphabet $\Sigma = \{0,...,9,\#\}$ that have the same 3 characters repeated in two places.
+
+This language \textbf{is not} regular - this can be proven using fooling sets.
+
+\end{enumerate}
+
+\end{document}
