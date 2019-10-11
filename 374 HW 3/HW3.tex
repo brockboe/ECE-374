@@ -224,8 +224,8 @@ We can define the CFL as follows, with E being the nonterminal that represents t
 
 $E = N\ |\ A\ |\ M\ |\ X\ |\ E + A\ |\ E+M\ |\ E+X $ \\
 $N = \{0,...,9\}\ |\ NN $ \\
-$A = N + N\ |\ A + N\ |\ M+M\ |\ A+M $ \\
-$M = N*N\ |\ N*(A)\ |\ (A)*(A)\ |\ M*M $ \\
+$A = N + N\ |\ A + N\ |\ M+M\ |\ A+M\ |\ M+A$ \\
+$M = N*N\ |\ N*(A)\ |\ (A)*N\ |\ (A)*(A)\ |\ M*M\ |\ M*X\ |\ X*M $ \\
 $X = N^N\ |\ (M)^N\ |\ (A)^N\ |\ (X)^N $ \\
 
 \end{tabular}
@@ -241,7 +241,7 @@ $X = N^N\ |\ (M)^N\ |\ (A)^N\ |\ (X)^N $ \\
 
 \item A is the language of select addition terms, this can be addition between two or more numbers, or the addition between two multiplication terms. A can be addition between two terms (N+N), three or more terms (A+N), or between two multiplication terms (M+M), or a series of numbers or a multiplication term plus an addition term (A+M). This is important because it allows us to consolidate terms which can then be wrapped in parenthesis and be multiplied or exponentiated without violating rules
 
-\item M is the language of addition terms, which can be between two or three numbers, two addition terms, or two multiplication terms. M can be two numbers multiplied, an addition term multiplied, two addition terms multiplied together, or two multiplication terms multiplied together. We know that A will be two or more terms added together, so we can wrap the A term's in parenthesis and be ensured the resulting expression follows the rules.
+\item M is the language of addition terms, which can be between two or three numbers, two addition terms, or two multiplication terms. M can be two numbers multiplied, an addition term multiplied, two addition terms multiplied together, a multiplication term times an exponentiation term, or two multiplication terms multiplied together. We know that A will be two or more terms added together, so we can wrap the A term's in parenthesis and be ensured the resulting expression follows the rules.
 
 \item X is the language of exponentiation terms, which can be a number to a power, a multiplication term to a higher power, an addition term to a higher power, or an exponentiation term to a higher power. We can add parenthesis around the M, A, and recursive X term and be ensured that the resulting expression follows the rules.
 
